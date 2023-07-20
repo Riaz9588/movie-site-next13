@@ -10,6 +10,9 @@ import Image from "next/image"
 // }
 
 export default async function MovieDetail({ params }: any) {
+
+    // await new Promise((resolve) => setTimeout(resolve, 2000));
+
     const imagePath = "https://image.tmdb.org/t/p/original"
     const res = await axios.get(`https://api.themoviedb.org/3/movie/${params.movie}?api_key=${process.env.MOVIE_API_KEY}`)
     const movie = await res.data
